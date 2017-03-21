@@ -1,9 +1,12 @@
 # Test Flags
 
-test_gflags: main.o
-	g++ -o test_gflags main.o -L/usr/local/lib -lgflags
+objects: main.o
+
+test_gflags: $(objects)
+	g++ -o test_gflags $(objects)
+
 main.o: src/main.cpp
 	g++ -c src/main.cpp
 
 clean:
-	rm test_gflags *.o
+	rm test_gflags $(objects)
