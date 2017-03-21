@@ -1,12 +1,15 @@
-# Test Flags
+## Added by guohao
 
-objects: main.o
+OBJS = main.o
+LIBS = -L/usr/local/lib/ -lgflags
+CC = g++
+CFLAGS = -Wall -O -g
 
-test_gflags: $(objects)
-	g++ -o test_gflags $(objects)
+test_gflags: $(OBJS)
+	$(CC) $(OBJS) -o test_gflags $(LIBS)
 
 main.o: src/main.cpp
-	g++ -c src/main.cpp
+	$(CC) $(CFLAGS) -c src/main.cpp -o main.o
 
 clean:
-	rm test_gflags $(objects)
+	rm -rf test_gflags *.o
