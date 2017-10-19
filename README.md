@@ -8,7 +8,7 @@
 
 ### 新增:
 
-增加gflags 的help 和 version信息
+增加gflags 的help 和 version信息。
 
 ### 改动:
 
